@@ -1,0 +1,50 @@
+:root {
+  /* PATHWEAVE Brand Colors - Refined for "Virtuous/Good" Vibe */
+  --color-primary-green: #8EDE22;
+  /* Slightly brighter/fresher */
+  --color-accent-orange: #FFB31A;
+  /* Softer orange */
+  --color-bg-base: #FFFEF7;
+  /* Very warm, paper-like white */
+  --color-text-primary: #4A4A4A;
+  /* Softer than pure black */
+  --color-text-secondary: #777777;
+  --color-ui-grey: #F5F5F5;
+  --color-white: #ffffff;
+
+  /* Mesh Gradients - Ethereal & Aurora-like */
+  --color-bg-mesh-1: rgba(142, 222, 34, 0.15);
+  /* Soft Green */
+  --color-bg-mesh-2: rgba(255, 179, 26, 0.12);
+  /* Soft Orange */
+  --color-bg-mesh-3: rgba(255, 255, 255, 0.9);
+  /* White Base dominating */
+  --color-bg-mesh-4: rgba(200, 230, 250, 0.2);
+  /* Dash of sky blue for airiness */
+
+  /* Glassmorphism - Elegant Crystal */
+  --color-glass-bg: rgba(255, 255, 255, 0.75);
+  --color-glass-border: rgba(255, 255, 255, 0.9);
+  --color-glass-shadow: rgba(100, 100, 100, 0.05);
+
+  /* Spacing - More breathing room */
+  --spacing-xs: 0.75rem;
+  --spacing-sm: 1.5rem;
+  --spacing-md: 2.5rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+
+  /* Typography */
+  --font-family-base: 'Lato', 'Kaisei Decol', 'Noto Sans JP', sans-serif;
+  --font-family-logo: 'WindSong', cursive;
+  /* Thin Simple Handwritten */
+
+  /* Animation */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark-mode {
+  /* No dark mode for this brand identity currently */
+  --color-text-primary: #303030;
+  --color-text-secondary: #666666;
+}
