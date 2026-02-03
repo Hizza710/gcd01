@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { searchImage } from '../services/unsplash';
 
 const DiscoveryCard = ({ data, onClick }) => {
-    const [imageUrl, setImageUrl] = useState("https://source.unsplash.com/random/800x800/?abstract");
+    const [imageUrl, setImageUrl] = useState("https://image.pollinations.ai/prompt/abstract%20art%20blur?width=800&height=800&nologo=true");
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
