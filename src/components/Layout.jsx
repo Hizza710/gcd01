@@ -85,7 +85,7 @@ const Layout = ({ children }) => {
                             <span className="mr-1">Powered by</span>
                             <a href="https://deepmind.google/technologies/gemini/" target="_blank" rel="noopener noreferrer" className="font-medium hover:text-indigo-600 border-b border-transparent hover:border-indigo-600 transition-all">Gemini</a>
                             <span>&</span>
-                            <a href="https://unsplash.com/" target="_blank" rel="noopener noreferrer" className="font-medium hover:text-indigo-600 border-b border-transparent hover:border-indigo-600 transition-all">Unsplash</a>
+                            <a href="https://pollinations.ai/" target="_blank" rel="noopener noreferrer" className="font-medium hover:text-indigo-600 border-b border-transparent hover:border-indigo-600 transition-all">Pollinations AI</a>
                             <ExternalLink className="w-3 h-3 ml-1 text-gray-400 group-hover:text-indigo-600" />
                         </div>
                     </div>
