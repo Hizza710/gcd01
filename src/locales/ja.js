@@ -34,6 +34,7 @@ export const ja = {
     },
     detail: {
         role: "仕事の役割",
+        culture: "文化的背景",
         living: "そこでの暮らし",
         download: "カードを保存",
         collected: "コレクション済み",

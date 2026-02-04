@@ -34,6 +34,7 @@ export const en = {
     },
     detail: {
         role: "The Role",
+        culture: "Cultural Context",
         living: "Living There",
         download: "Download Card",
         collected: "Collected in My Page",

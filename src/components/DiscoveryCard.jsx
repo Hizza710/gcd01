@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { searchImage } from '../services/unsplash';
+import { searchImage } from '../services/imageService';
 
 const DiscoveryCard = ({ data, onClick }) => {
     const [imageUrl, setImageUrl] = useState("https://image.pollinations.ai/prompt/abstract%20art%20blur?width=800&height=800&nologo=true");
     const [loading, setLoading] = useState(true);
+    const [imageError, setImageError] = useState(false);
 
     useEffect(() => {
         let mounted = true;
         const fetchImage = async () => {
             try {
-                const url = await searchImage(data.unsplashKeywords || `${data.country} ${data.jobTitle}`);
+                const url = await searchImage(data.imageKeywords || `${data.country} ${data.jobTitle}`);
                 if (mounted) setImageUrl(url);
             } catch (e) {
                 console.error("Failed to load image", e);
@@ -19,7 +20,7 @@ const DiscoveryCard = ({ data, onClick }) => {
         };
         fetchImage();
         return () => { mounted = false; };
-    }, [data.unsplashKeywords, data.country, data.jobTitle]);
+    }, [data.imageKeywords, data.country, data.jobTitle]);
 
     return (
         <div
@@ -27,12 +28,25 @@ const DiscoveryCard = ({ data, onClick }) => {
             className="group relative aspect-square rounded-[32px] overflow-hidden cursor-pointer transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
         >
             {/* Background Image */}
-            <div className="absolute inset-0 bg-gray-200">
-                <img
-                    src={imageUrl}
-                    alt={data.jobTitle}
-                    className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${loading ? 'opacity-0' : 'opacity-100'}`}
-                />
+            {/* Background Image */}
+            <div className={`absolute inset-0 ${!imageError ? 'bg-gray-200' : 'bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500'}`}>
+                {!imageError ? (
+                    <img
+                        src={imageUrl}
+                        alt={data.jobTitle}
+                        onError={() => {
+                            console.warn("Image capture failed for:", data.jobTitle);
+                            setImageError(true);
+                            setLoading(false);
+                        }}
+                        onLoad={() => setLoading(false)}
+                        className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${loading ? 'opacity-0' : 'opacity-100'}`}
+                    />
+                ) : (
+                    <div className="w-full h-full flex items-center justify-center opacity-70">
+                        {/* Fallback pattern or just the gradient */}
+                    </div>
+                )}
             </div>
 
             {/* Skeleton Loading */}

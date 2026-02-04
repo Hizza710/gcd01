@@ -27,8 +27,9 @@ export const getJobSuggestions = async (aspiration, homeCountry, randomCountries
     1. "country": The country name.
     2. "jobTitle": A specific, inspiring job title (e.g. "Community Weaver", "Sustainable Artisan").
     3. "jobDescription": How this specific role in this country CREATES VALUE aligned with the aspiration. focus on the contribution (max 200 chars).
-    4. "experience": The lifestyle accommpanying this value creation. What does it feel like to live there and do this meaningful work? (max 400 chars).
-    5. "unsplashKeywords": English keywords for a photo showing the *action* of this value creation (e.g. "pottery hands clay japan workshop").
+    4. "culturalContext": Explain the specific cultural background/custom/value (e.g. "Omotenashi", "Ubuntu") that makes this role significant here. Why does this culture value this? (max 200 chars).
+    5. "experience": The lifestyle accommpanying this value creation. What does it feel like to live there and do this meaningful work? (max 400 chars).
+    6. "imageKeywords": English keywords for a photo showing the *action* of this value creation (e.g. "pottery hands clay japan workshop").
     
     Return strictly JSON array.
   `;
@@ -56,8 +57,10 @@ const mockData = (homeCountry, countries, aspiration) => {
     country,
     jobTitle: `Value Creator in ${country}`,
     jobDescription: `In ${country}, you translate "${aspiration}" into tangible value for the local community, bridging tradition and future needs.`,
+    culturalContext: `This role is rooted in the ${country} tradition of collective well-being, where individual success is measured by community contribution.`,
     experience: `Your days in ${country} are filled with purpose. The local culture embraces your vision, and you feel a deep connection to the people you serve through your work.`,
-    unsplashKeywords: `${country} artisan working lifestyle`,
+    imageKeywords: `${country} artisan working lifestyle`,
     isMock: true
   }));
 };
+

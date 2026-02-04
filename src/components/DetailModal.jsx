@@ -58,6 +58,11 @@ const DetailModal = ({ data, imageUrl, onClose }) => {
                         <p className="text-lg leading-relaxed text-gray-200">{data.jobDescription}</p>
                     </div>
 
+                    <div className="mb-8">
+                        <h3 className="text-xl font-semibold mb-3 text-pink-200">{t('detail.culture')}</h3>
+                        <p className="text-lg leading-relaxed text-gray-200">{data.culturalContext || "Exploring the unique traditions..."}</p>
+                    </div>
+
                     <div className="mb-10">
                         <h3 className="text-xl font-semibold mb-3 text-pink-200">{t('detail.living')}</h3>
                         <p className="text-lg leading-relaxed text-gray-200 italic">"{data.experience}"</p>
